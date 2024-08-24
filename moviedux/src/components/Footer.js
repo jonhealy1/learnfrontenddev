@@ -3,6 +3,7 @@ import '../styles.css';
 
 export default function Footer(){
     const currentYear = new Date().getFullYear();
+    console.log("In the footer");
     return (
         <footer className='footer'>
             <p className='footer-text'>
