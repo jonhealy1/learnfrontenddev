@@ -6,7 +6,7 @@ export default function MoviesGrid() {
   const [movies, setMovies] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
 
-  const [genre, setGenre] = useState("All genres");
+  const [genre, setGenre] = useState("All Genres");
   const [rating, setRating] = useState("All");
 
   useEffect(() => {
