@@ -13,7 +13,16 @@ function App() {
         <Header></Header>
 
         <Router>
-          <nav></nav>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/watchlist">Watchlist</Link>
+              </li>
+            </ul>
+          </nav>
           <Routes>
             <Route path="/" element={<MoviesGrid />}></Route>
             <Route path="/watchlist" element={<Watchlist />}></Route>
