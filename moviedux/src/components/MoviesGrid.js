@@ -95,7 +95,12 @@ export default function MoviesGrid({ movies, watchlist, toggleWatchlist }) {
 
       <div className="movies-grid">
         {filteredMovies.map((movie) => (
-          <MovieCard movie={movie} key={movie.id}></MovieCard>
+          <MovieCard
+            movie={movie}
+            key={movie.id}
+            toggleWatchlist={toggleWatchlist}
+            isWatchlisted={watchlist.includes(movie.id)}
+          ></MovieCard>
         ))}
       </div>
     </div>
