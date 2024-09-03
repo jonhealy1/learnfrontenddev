@@ -1,4 +1,4 @@
-import React, { useState } from "React";
+import React, { useState } from "react";
 
 export default function TicketForm() {
   const [title, setTitle] = useState("");
@@ -17,5 +17,31 @@ export default function TicketForm() {
     setPriority("");
   };
 
-  return <></>;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    clearForm();
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="ticket-form">
+      <div>
+        <label>Title</label>
+        <input
+          type="text"
+          value={title}
+          className="form-input"
+          onChange={(e) => setTitle(e.target.value)}
+        ></input>
+      </div>
+      <div>
+        <label>Descriptiom</label>
+        <textarea
+          type="text"
+          value={description}
+          className="form-input"
+          onChange={(e) => setDescription(e.target.value)}
+        ></textarea>
+      </div>
+    </form>
+  );
 }
