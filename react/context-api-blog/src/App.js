@@ -7,8 +7,9 @@ function App() {
 
   return (
     <div>
-      <BlogPage></BlogPage>
-      <UserInfoContext.Provider value={userInfo}></UserInfoContext.Provider>
+      <UserInfoContext.Provider value={userInfo}>
+        <BlogPage></BlogPage>
+      </UserInfoContext.Provider>
     </div>
   );
 }
