@@ -20,7 +20,11 @@ const Header = () => {
             </nav>
 
             {/* Mobile Nav */}
-            <nav className='block md:hidden fixed left-0 right-0 top-10 py-2 h-full bg-gray-900'>
+            <nav className={ 
+                !toggle 
+                    ? "block md:hidden fixed left-[-100%] right-0 top-10 py-2 h-full bg-gray-900"
+                    : "block md:hidden fixed left-0 right-0 top-10 py-2 h-full bg-gray-900"
+                }>
                 {/* Desktop Nav */}
                 <ul className='flex flex-col'>
                     <li><a href='/#'>About</a></li>
@@ -33,7 +37,7 @@ const Header = () => {
             {/* Toggle button */}
             <button onClick={handleToggle}>
                 {
-                    toggle ? <AiOutlineMenu/> : <AiOutlineClose/>
+                    !toggle ? <AiOutlineMenu size={30}/> : <AiOutlineClose size={30}/>
                 }
             </button>
         </header> 
