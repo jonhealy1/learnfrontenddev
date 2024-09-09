@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 nav li a {
-  @apply p-4 font-bold;
+  @apply p-4 text-white;
 }
 
 nav li a:hover {
