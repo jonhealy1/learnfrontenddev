@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { AiOutlineMenu, AIOutlineClose } from 'react-icons/ai'
+import { AiOutlineMenu, AiOutlineClose } from 'react-icons/ai'
 
 const Header = () => {
     const [toggle, setToggle] = useState(false);
@@ -31,7 +31,11 @@ const Header = () => {
                 </ul>
             </nav>
             {/* Toggle button */}
-            <button onClick={handleToggle}></button>
+            <button onClick={handleToggle}>
+                {
+                    toggle ? <AiOutlineMenu/> : <AiOutlineClose/>
+                }
+            </button>
         </header> 
     )
 }
