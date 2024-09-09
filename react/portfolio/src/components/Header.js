@@ -1,6 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { AiOutlineMenu, AIOutlineClose } from 'react-icons/ai'
 
 const Header = () => {
+    const [toggle, setToggle] = useState(false);
+
+    const handleToggle = () => setToggle(!toggle);
     return(
         <header className='flex justify-between px-5 py-2 bg-gray-600'>
         <a href='/' className='logo text-2xl text-white font-bold'>Jonathan Healy</a>   
@@ -27,6 +31,7 @@ const Header = () => {
                 </ul>
             </nav>
             {/* Toggle button */}
+            <button onClick={handleToggle}></button>
         </header> 
     )
 }
