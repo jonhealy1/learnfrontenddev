@@ -8,8 +8,8 @@ export const ThemeProvider = ({ children }) => {
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, setTheme }}>
-      {{ children }}
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      {children}
     </ThemeContext.Provider>
   );
 };
