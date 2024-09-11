@@ -22,8 +22,8 @@ const Header = () => {
             {/* Mobile Nav */}
             <nav className={ 
                 !toggle 
-                    ? "block md:hidden fixed left-[-100%] right-0 top-10 py-2 h-full bg-gray-900"
-                    : "block md:hidden fixed left-0 right-0 top-10 py-2 h-full bg-gray-900"
+                    ? "mobile-nav"
+                    : "block md:hidden fixed left-0 top-10 py-2 w-full h-full bg-gray-900 duration-500"
                 }>
                 {/* Desktop Nav */}
                 <ul className='flex flex-col'>

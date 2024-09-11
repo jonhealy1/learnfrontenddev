@@ -9,3 +9,7 @@ nav li a {
 nav li a:hover {
   @apply text-blue-200;
 }
+
+.mobile-nav {
+  @apply block md:hidden fixed left-[-100%] top-10 py-2 w-full h-full bg-gray-900 duration-500
+}
