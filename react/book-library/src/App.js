@@ -3,6 +3,8 @@ import { BooksProvider } from "./BooksContext";
 import BooksDetails from "./components/BookDetails";
 import Books from "./components/Books";
 import NotFound from "./components/NotFound";
+import SecretBooks from "./components/SecretBooks";
+import { PrivateRoute } from "./components/PrivateRoute";
 import {
   BrowserRouter as Router,
   Routes,
@@ -22,6 +24,14 @@ function App() {
             element={<BooksDetails></BooksDetails>}
           ></Route>
           <Route path="*" element={<NotFound></NotFound>}></Route>
+          <Route
+            path="/secret"
+            element={
+              <PrivateRoute
+                Component={<SecretBooks></SecretBooks>}
+              ></PrivateRoute>
+            }
+          ></Route>
         </Routes>
       </Router>
     </BooksProvider>
