@@ -10,7 +10,7 @@ const Hero = () => {
                     I am <span className="text-accent">J</span>onathan <br />
                     Fullstack engineer
                 </h1> 
-                <p>I work in Python, Golang and React</p>
+                <p className="pt-5">I am proficient in Python, Golang and React</p>
                 <button>See projects</button>
             </div>
             <div className="hero-img">
