@@ -6,8 +6,8 @@ const Header = () => {
 
     const handleToggle = () => setToggle(!toggle);
     return(
-        <header className='flex justify-between px-5 py-2 bg-gray-600'>
-        <a href='/' className='logo text-2xl text-white font-bold'>Jonathan Healy</a>   
+        <header className='flex justify-between px-5 py-2 bg-primary'>
+        <a href='/' className='logo text-2xl font-bold text-accent'>Jonathan Healy</a>   
             {/* Desktop Nav */}
             <nav className='hidden md:block'>
                 <ul className='flex'>
