@@ -34,5 +34,5 @@ nav li a:hover {
 /* hero */
 h1 {
   font-family: 'Pacifico', cursive;
-  line-height: 1.2;
+  line-height: 1.5 !important;
 }
