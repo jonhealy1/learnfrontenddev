@@ -1,19 +1,16 @@
 import React from "react";
 
 const CreateTodo = () => {
-  const tasks = 2;
-  const countTasks = () => {
-    // if (tasks === 0) {
-    //   return "No Tasks Available";
-    // } else {
-    //   return `Tasks: ${tasks}`;
-    // }
-    return tasks === 0 ? "No Tasks Available" : `Tasks: ${tasks}`;
+  const tasks = 0;
+  const handleClick = () => {
+    console.log("Add Task");
   };
   return (
     <>
-      <h1>{countTasks()}</h1>
-      <button>Add Task</button>
+      <h1>Tasks: {tasks}</h1>
+      <button onClick={handleClick} value="Add Task Button">
+        Add Task
+      </button>
     </>
   );
 };
