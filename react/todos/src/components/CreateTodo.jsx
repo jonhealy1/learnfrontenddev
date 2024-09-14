@@ -1,13 +1,17 @@
 import React from "react";
+import { useState } from "react";
 
 const CreateTodo = () => {
-  const tasks = 0;
+  const countArr = useState(0);
+  const count = countArr[0];
+  const setCount = countArr[1];
+
   const handleClick = () => {
-    console.log("Add Task");
+    setCount(count + 1);
   };
   return (
     <>
-      <h1>Tasks: {tasks}</h1>
+      <h1>Tasks: {count}</h1>
       <button onClick={handleClick} value="Add Task Button">
         Add Task
       </button>
