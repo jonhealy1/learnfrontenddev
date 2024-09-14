@@ -2,9 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const CreateTodo = () => {
-  const countArr = useState(0);
-  const count = countArr[0];
-  const setCount = countArr[1];
+  const [count, setCount] = useState(0);
 
   const handleClick = () => {
     setCount(count + 1);
