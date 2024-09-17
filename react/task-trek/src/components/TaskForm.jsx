@@ -5,8 +5,18 @@ import Tag from "./Tag";
 
 const TaskForm = () => {
   const [task, setTask] = useState("");
+  const [status, setStatus] = useState("todo");
+
+  const handleTaskChange = (e) => {
+    setTask(e.target.value);
+  };
+
+  const handleStatusChange = (e) => {
+    setStatus(e.target.value);
+  };
 
   console.log(task);
+  console.log(status);
   return (
     <header className="app_header">
       <form>
@@ -14,7 +24,7 @@ const TaskForm = () => {
           type="text"
           className="task_input"
           placeholder="Enter your task"
-          onChange={(e) => setTask(e.target.value)}
+          onChange={handleTaskChange}
         />
         <div className="task_form_bottom_line">
           <div>
@@ -24,7 +34,7 @@ const TaskForm = () => {
             <Tag tagName="React"></Tag>
           </div>
           <div>
-            <select className="task_status">
+            <select className="task_status" onChange={handleStatusChange}>
               <option value="todo">To do</option>
               <option value="doing">Doing</option>
               <option value="done">Done</option>
