@@ -4,7 +4,26 @@ import "./TaskForm.css";
 import Tag from "./Tag";
 
 const TaskForm = () => {
-  const [taskData, setTaskData] = useState({ task: "", status: "todo" });
+  const [taskData, setTaskData] = useState({
+    task: "",
+    status: "todo",
+    tags: [],
+  });
+
+  const selectTag = (tag) => {
+    if (taskData.tags.some((item) => item === tag)) {
+      const filterTags = taskData.tags.filter((item) => item !== tag);
+      setTaskData((prev) => {
+        return { ...prev, tags: filterTags };
+      });
+    } else {
+      setTaskData((prev) => {
+        return { ...prev, tags: [...prev.tags, tag] };
+      });
+    }
+  };
+
+  console.log(taskData.tags);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -31,10 +50,10 @@ const TaskForm = () => {
         />
         <div className="task_form_bottom_line">
           <div>
-            <Tag tagName="HTML"></Tag>
-            <Tag tagName="CSS"></Tag>
-            <Tag tagName="JavaScript"></Tag>
-            <Tag tagName="React"></Tag>
+            <Tag tagName="HTML" selectTag={selectTag}></Tag>
+            <Tag tagName="CSS" selectTag={selectTag}></Tag>
+            <Tag tagName="JavaScript" selectTag={selectTag}></Tag>
+            <Tag tagName="React" selectTag={selectTag}></Tag>
           </div>
           <div>
             <select
