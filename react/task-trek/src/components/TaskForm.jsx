@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "./TaskForm.css";
 import Tag from "./Tag";
 
-const TaskForm = () => {
+const TaskForm = ({ setTasks }) => {
   const [taskData, setTaskData] = useState({
     task: "",
     status: "todo",
@@ -27,8 +27,6 @@ const TaskForm = () => {
     }
   };
 
-  console.log(taskData.tags);
-
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -40,6 +38,14 @@ const TaskForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(taskData);
+    setTasks((prev) => {
+      return [...prev, taskData];
+    });
+    setTaskData({
+      task: "",
+      status: "todo",
+      tags: [],
+    });
   };
 
   return (
