@@ -15,13 +15,6 @@
 function Stopwatch() {
   let startTime = null;
   let elapsedTime = 0;
-  this.start = function () {
-    if (startTime === null) {
-      startTime = Date.now();
-    } else {
-      console.log("Stopwatch is already running!");
-    }
-  };
   this.stop = function () {
     if (startTime !== null) {
       let passed = Date.now() - startTime;
@@ -40,4 +33,17 @@ function Stopwatch() {
       return elapsedTime;
     },
   });
+  Object.defineProperty(this, "startTime", {
+    get: function () {
+      return startTime;
+    },
+  });
 }
+
+Stopwatch.prototype.start = function () {
+  if (this.startTime === null) {
+    this.startTime = Date.now();
+  } else {
+    console.log("Stopwatch is already running!");
+  }
+};
