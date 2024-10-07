@@ -1,34 +1,35 @@
-function Shape(color) {
-  this.color = color;
+function mixin(target, ...sources) {
+  Object.assign(target, ...sources);
 }
 
-Shape.prototype.duplicate = function () {
-  console.log("duplicate");
+const canEat = {
+  eat: function () {
+    this.hunger--;
+    console.log("eating");
+  },
 };
 
-function extend(Child, Parent) {
-  Child.prototype = Object.create(Parent.prototype);
-  Child.prototype.constructor = Child;
-}
-
-function Circle(radius, color) {
-  Shape.call(this, color);
-  this.radius = radius;
-}
-
-extend(Circle, Shape);
-
-Circle.prototype.draw = function () {
-  console.log("draw");
+const canWalk = {
+  walk: function () {
+    console.log("walking");
+  },
 };
 
-function Square(size, color) {
-  Shape.call(this, color);
-  this.size = size;
-}
+const canSwim = {
+  swim: function () {
+    console.log("swim");
+  },
+};
 
-extend(Square, Shape);
+function Person() {}
 
-const s = new Shape();
-const c = new Circle(1, "red");
-const q = new Square(4, "blue");
+mixin(Person.prototype, canEat, canWalk);
+const person = new Person();
+
+console.log(person);
+
+function Goldfish() {}
+mixin(Goldfish.prototype, canEat, canSwim);
+const fish = new Goldfish();
+
+console.log(fish);
