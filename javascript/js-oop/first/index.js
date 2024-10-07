@@ -1,49 +1,28 @@
-// // Factory Function
-// function createCircle(radius) {
-//   return {
-//     radius,
-//     draw: function () {
-//       console.log("draw");
-//     },
-//   };
-// }
-
-// const circle = createCircle(10);
-// circle.draw();
-
-// Constructor Function
-function Stopwatch() {
-  let startTime = null;
-  let elapsedTime = 0;
-  this.stop = function () {
-    if (startTime !== null) {
-      let passed = Date.now() - startTime;
-      elapsedTime += passed;
-      startTime = null;
-    } else {
-      console.log("Stopwatch has not yet started!");
-    }
-  };
-  this.reset = function () {
-    elapsedTime = 0;
-    startTime = null;
-  };
-  Object.defineProperty(this, "display", {
-    get: function () {
-      return elapsedTime;
-    },
-  });
-  Object.defineProperty(this, "startTime", {
-    get: function () {
-      return startTime;
-    },
-  });
+function Shape(color) {
+  this.color = color;
 }
 
-Stopwatch.prototype.start = function () {
-  if (this.startTime === null) {
-    this.startTime = Date.now();
-  } else {
-    console.log("Stopwatch is already running!");
-  }
+Shape.prototype.duplicate = function () {
+  console.log("duplicate");
 };
+
+function Circle(radius, color) {
+  Shape.call(this, color);
+  this.radius = radius;
+}
+
+function extend(Child, Parent) {
+  Child.prototype = Object.create(Parent.prototype);
+  Child.prototype.constructor = Child;
+}
+
+Circle.prototype.draw = function () {
+  console.log("draw");
+};
+
+function Square(size) {
+  this.size;
+}
+
+const s = new Shape();
+const c = new Circle(1, "red");

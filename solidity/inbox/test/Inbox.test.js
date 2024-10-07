@@ -17,6 +17,7 @@ beforeEach(async () => {
   accounts = await web3.eth.getAccounts();
 
   // Use one of those accounts to deploy the contract
+  // key = https://sepolia.infura.io/v3/ad9567965c6246dd83b7a41a3edb2257
 
   inbox = await new web3.eth.Contract(JSON.parse(interface))
     .deploy({
