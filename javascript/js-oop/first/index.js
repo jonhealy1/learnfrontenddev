@@ -1,35 +1,11 @@
-function mixin(target, ...sources) {
-  Object.assign(target, ...sources);
+class Circle {
+  constructor(radius) {
+    this.radius = radius;
+  }
+
+  draw() {
+    console.log("draw");
+  }
 }
 
-const canEat = {
-  eat: function () {
-    this.hunger--;
-    console.log("eating");
-  },
-};
-
-const canWalk = {
-  walk: function () {
-    console.log("walking");
-  },
-};
-
-const canSwim = {
-  swim: function () {
-    console.log("swim");
-  },
-};
-
-function Person() {}
-
-mixin(Person.prototype, canEat, canWalk);
-const person = new Person();
-
-console.log(person);
-
-function Goldfish() {}
-mixin(Goldfish.prototype, canEat, canSwim);
-const fish = new Goldfish();
-
-console.log(fish);
+const c = new Circle(1);
