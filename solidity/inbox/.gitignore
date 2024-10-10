@@ -1,2 +1,41 @@
+# Node.js
+node_modules/
+.env
+*.log
+yarn.lock
+package-lock.json
+
+# Solidity build artifacts
+artifacts/
+caches/
+*.sol.json
+typechain/
+
+# Truffle
+build/
+
+# Hardhat
+cache/
+coverage/
+debug/
+
+# Remix IDE
+remix/
+
+# VSCode settings
+.vscode/
+
+# MacOS
 .DS_Store
-node_modules
+
+# Miscellaneous
+*.swp
+*.swo
+.idea/
+*.iml
+
+# Coverage reports
+coverage/
+
+# Compiled contract files
+dist/
