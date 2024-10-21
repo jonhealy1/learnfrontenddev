@@ -6,3 +6,4 @@ Code created while I learn front end development.
 
 - React
 - Tailwind
+- Solidity
