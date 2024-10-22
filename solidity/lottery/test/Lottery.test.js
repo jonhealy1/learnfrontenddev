@@ -4,6 +4,7 @@ const assert = require("assert");
 
 const web3 = new Web3(ganache.provider());
 const { interface, bytecode } = require("../compile");
+const { send } = require("process");
 
 let lottery;
 let accounts;
@@ -55,5 +56,17 @@ describe("Lottery Contract", () => {
     assert.equal(accounts[1], players[1]);
     assert.equal(accounts[2], players[2]);
     assert.equal(3, players.length);
+  });
+
+  it("requires a minimum amount of ether to enter", async () => {
+    try {
+      await lottery.methods.enter().send({
+        from: accounts[0],
+        value: "200",
+      });
+      assert(false);
+    } catch (err) {
+      assert(err);
+    }
   });
 });
